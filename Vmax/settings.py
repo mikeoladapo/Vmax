@@ -144,3 +144,5 @@ cloudinary.config(
     api_key=CLOUDINARY_STORAGE['API_KEY'],
     api_secret=CLOUDINARY_STORAGE['API_SECRET']
 )
+
+AUTH_USER_MODEL = 'base.CustomUser'

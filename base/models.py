@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser , BaseUserManager,PermissionsMixin
 from django.core.validators import RegexValidator
+from cloudinary.models import CloudinaryField
 
 class CustomUserManager(BaseUserManager):
     def create_user(self,email,password=None,**extra_fields):
@@ -45,7 +46,5 @@ class CustomUser(AbstractBaseUser,PermissionsMixin):
 class VideoFile(models.Model):
     title = models.CharField(max_length=200)
     video = CloudinaryField("video",blank=False,null=False)
-    thumbnail = 
-    
-
-
+    thumbnail = CloudinaryField("image",blank=True,null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
