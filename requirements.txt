@@ -1,0 +1,5 @@
+django
+django-restframework
+cloudinary
+python-dotenv
+Pillow
