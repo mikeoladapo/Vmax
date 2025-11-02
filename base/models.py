@@ -21,7 +21,7 @@ class CustomUserManager(BaseUserManager):
             raise ValueError("Superuser must have is_superuser=True.")
         return self.create_user(email, password, **extra_fields)
 
-class CustomUser(AbstractBaseUser,PermissionsMixin)
+class CustomUser(AbstractBaseUser,PermissionsMixin):
     username_regex = RegexValidator(
         regex=r'^[a-zA-Z0-9_]{3,20}$',
         message=(
