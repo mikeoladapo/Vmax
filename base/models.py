@@ -23,7 +23,7 @@ class CustomUserManager(BaseUserManager):
 
 class CustomUser(AbstractBaseUser,PermissionsMixin):
     username_regex = RegexValidator(
-        regex=r'^[a-zA-Z0-9_]{3,20}$'
+        regex=r'^[a-zA-Z0-9_]{3,20}$',
         message=(
         "Username must be 3-20 characters long and can only contain letters, "
         "numbers, and underscores."),
